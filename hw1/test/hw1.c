@@ -2,7 +2,7 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 #include <linux/list.h>
-#include <linux/slab.h>
+#include<linux/slab.h>
 
 struct birthday {
   char *name;
@@ -28,7 +28,7 @@ void add_birthday(char *name, int day, int month, int year){
 }
       
 void print_birthday(struct birthday *birthday){
-  printk(KERN_INFO "name: %s birthday: %d/%d/%d\n", birthday->name, birthday->month, birthday->day, birthday->year);
+  printk(KERN_INFO "name: %s\nbirthday: %d/%d/%d\n", birthday->name, birthday->month, birthday->day, birthday->year);
 }
 
 int hw1_init(void){
@@ -40,8 +40,7 @@ int hw1_init(void){
   add_birthday("tony", 11, 7, 1994);
   add_birthday("yinjing", 9, 12, 1963);
 
-  struct birthday *ptr;
-  list_for_each_entry(ptr,&birthday_list, list){
+  list_for_each_entry_safe(ptr, next, &birthday_list, list){
     print_birthday(ptr);
   }
   
