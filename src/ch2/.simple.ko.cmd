@@ -1,1 +1,0 @@
-cmd_/home/aki/cs4414/src/ch2/simple.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.16.0-4-common/scripts/module-common.lds --build-id  -o /home/aki/cs4414/src/ch2/simple.ko /home/aki/cs4414/src/ch2/simple.o /home/aki/cs4414/src/ch2/simple.mod.o
