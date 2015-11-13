@@ -12,7 +12,6 @@ pthread_attr_t attr;
 int* array;
 int count;
 int size;
-int n = 0;
 
 int cmp(const void* a, const void* b){
 	return *(int*)a - *(int*)b;
